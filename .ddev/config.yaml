@@ -1,0 +1,27 @@
+name: laravel-starter-template
+type: laravel
+docroot: public
+php_version: "8.2"
+webserver_type: nginx-fpm
+xdebug_enabled: false
+additional_hostnames: []
+additional_fqdns: []
+database:
+    type: postgres
+    version: "15"
+webimage_extra_packages: [php8.2-swoole]
+use_dns_when_possible: true
+composer_version: "2"
+web_environment:
+    - OCTANE_SERVER=swoole
+nodejs_version: "18"
+disable_upload_dirs_warning: true
+web_extra_exposed_ports:
+  - name: octane
+    container_port: 8000
+    https_port: 443
+    http_port: 80
+  - name: node-vite
+    container_port: 3000
+    http_port: 3001
+    https_port: 3000
